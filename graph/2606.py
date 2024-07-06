@@ -1,30 +1,32 @@
-"""
-1. 아이디어
-- bfs
-2. 시간복잡도
-3. 자료구조
-- 방문한 노드 찾는 bool[][]
-- queue
-- graph[][]
-"""
 import sys
 from collections import deque
 
 input = sys.stdin.readline
 
-m = int(input())
-# n = int(input())
+m = int(input()) # 컴퓨터 수(노드 수)
+n = int(input()) # 네트워크 수
 
-# visited = [False] * m+1 # 노드들의 개수 +1
+visited = [False] * (m+1) # 노드 개수 +1
 
-graph = [[] for _ in range(m+1)] # 이차원 배열
+graph = [[] for _ in range(m+1)] # 이차원 빈 배열
 
-for i in range(m):
+for _ in range(n):
     a, b = map(int, input().split())
-    print(graph[a] + [b])
-    # print(graph[a])
+    graph[a].append(b)
+    graph[b].append(a) # 양방향 연결 리스트
+# print(graph)
+def bfs(start):
+    cnt = 0
+    q = deque([start])
+    visited[start] = True ### 처음 노드 방문 처리 중요
+    while q:
+        v = q.popleft()
+        for i in graph[v]:
+            if visited[i] == False:
+                q.append(i)
+                cnt += 1
+                visited[i] = True
+    return cnt
 
-
-
-
+print(bfs(1))
 
