@@ -13,7 +13,7 @@ graph = [
 ]
 
 check = [False] * 9
-def bfs(graph, start, ):
+def bfs(graph, start):
     q = deque([start])
     check[start] = True
     while q:
