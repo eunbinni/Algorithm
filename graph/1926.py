@@ -19,7 +19,7 @@ from collections import deque
 
 input = sys.stdin.readline
 
-n,m = map(int, input().split())
+n, m = map(int, input().split())
 
 graph = [list(map(int, input().split())) for _ in range(n)]
 
@@ -30,7 +30,7 @@ queue = []
 dy = [0,1,0,-1]
 dx = [1,0,-1,0]
 
-def bfs(y,x):
+def bfs(y, x):
     rs = 1 # 그림의 넓이
     q = deque()
     q.append((y,x))
@@ -57,5 +57,3 @@ for i in range(n):
             maxv = max(maxv, bfs(i,j))
 print(cnt)
 print(maxv)
-
-
