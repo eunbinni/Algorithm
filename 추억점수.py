@@ -1,3 +1,6 @@
+"""
+프로그래머스 추억점수
+"""
 def solution(name, yearning, photo):
     answer = []
 
