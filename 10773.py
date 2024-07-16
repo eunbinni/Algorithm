@@ -1,9 +1,9 @@
 import sys
 
 input = sys.stdin.readline
-data = input().split()
-k = int(data[0])
-num_list = list(map(int, data[1:]))
+k = int(input())
+
+num_list = [int(input()) for _ in range(k)]
 
 stack = []
 
