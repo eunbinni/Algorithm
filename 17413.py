@@ -1,3 +1,7 @@
+"""
+string & stack & 구현
+다시풀기 : 0회째
+"""
 import sys
 from collections import deque
 
