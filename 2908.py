@@ -1,3 +1,6 @@
+"""
+브 2, 다시 풀지 않음
+"""
 a, b = input().split()
 # a와 b를 string으로 받는다
 # a를 string 하나씩 자른다
