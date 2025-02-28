@@ -1,15 +1,28 @@
 import sys
-
 input = sys.stdin.readline
 
 n = int(input())
-
-A = list(map(int, input().split()))
-A = sorted(A)
+lst = list(map(int, input().split()))
+lst = sorted(lst)
 m = int(input())
+lst2 = list(map(int, input().split()))
+def search(start, end, target):
+    mid = (start + end) // 2
+    if start == end:
+        if lst[start] == target:
+            print("1")
+        else:
+            print("0")
+        return
+    if lst[mid] < target:
+        search(mid+1, end, target)
+    else:
+        search(start, mid, target)
 
-M = list(map(int, input().split()))
+for x in lst2:
+    search(0, n-1, x)
 
+"""
 def binarySearch(array, target, start, end):
     if start > end:
         return 0
@@ -23,3 +36,5 @@ def binarySearch(array, target, start, end):
 
 for i in M:
     print(binarySearch(A, i, 0, len(A)-1))
+
+"""
